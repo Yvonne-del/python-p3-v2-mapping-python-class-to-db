@@ -9,25 +9,16 @@ import ipdb
 Department.drop_table()
 Department.create_table()
 
-
 payroll = Department.create("Payroll", "Building A, 5th Floor")
 print(payroll)  # <Department 1: Payroll, Building A, 5th Floor>
 
 hr = Department.create("Human Resources", "Building C, East Wing")
 print(hr)  # <Department 2: Human Resources, Building C, East Wing>
 
-department2 = Department.create("Sales and Marketing", "Building B, 4rd Floor")
-print(department2)
-
 hr.name = 'HR'
 hr.location = "Building F, 10th Floor"
 hr.update()
 print(hr)  # <Department 2: HR, Building F, 10th Floor>
-
-department2.name = 'Marketing'
-department2.location = "Building B, 3th Floor"
-department2.update()
-print(hr)
 
 print("Delete Payroll")
 payroll.delete()  # delete from db table, object still exists in memory
